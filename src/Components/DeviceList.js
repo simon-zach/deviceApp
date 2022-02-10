@@ -3,7 +3,7 @@ import React,{useState} from "react";
 import PopUpWindow from "./PopUpWindow";
 import DeviceItem from "./DeviceItem";
 import { Button ,ListGroup, Stack} from "react-bootstrap";
-import AddNewDevice from "./AddNewDevice";
+import AddNewDevice from "./AddNewDeviceContainer";
 import DeviceDetails from "./DeviceDetails";
 
 const deviceArr=[

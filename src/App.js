@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 
 import DeviceList from "./Components/DeviceList";
-
+import {Container} from "react-bootstrap"
 
 
 
@@ -10,9 +10,12 @@ function App() {
   
   return (
     <>
-     <DeviceList>
+    <Container>
+      <DeviceList>
 
-     </DeviceList>
+      </DeviceList>
+    </Container>
+     
     </>
   );
 }

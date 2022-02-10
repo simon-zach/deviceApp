@@ -1,10 +1,11 @@
 import React from "react";
-function DeviceItem({value,onClick,handlePenis}){
+
+function DeviceItem({id}){
 
 
     return(
         <>
-            <p onClick={onClick}>{value}</p>
+            <p>ID: {id}</p>
         </>
     )
 }

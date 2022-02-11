@@ -1,10 +1,6 @@
 import React,{useState} from "react";
-
-import DeviceList from "./Components/DeviceList";
+import DeviceList from "./Components/DeviceList/DeviceListsContainer";
 import {Container} from "react-bootstrap"
-
-
-
 
 function App() {
   

@@ -3,12 +3,20 @@ const createActionName = function(name) {
 }
 
 const ADD_DEVICE = createActionName("ADD_DEVICE");
+const UPDATE_DEVICE = createActionName("UPDATE_DEVICE");
+const REMOVE_DEVICE = createActionName("REMOVE_DEVICE"); 
 
 //action creators
 export const addDevice = payload => ({ type: ADD_DEVICE, payload })
-/*
+export const updateDevice = payload => ({ type: UPDATE_DEVICE, payload })
+export const removeDevice = payload => ({ type: REMOVE_DEVICE, payload })
+
 //selectors
-export const getAllBooks = state => state.books.data;
+export const getAllDevices = state => state.devices.data;
+
+/*
+
+
 export const getBook = (state, bookId) => state.books.data.find((book)=>book.id===bookId);
 
 
@@ -30,8 +38,11 @@ const reducer = function(statePart = [], action = {}) {
     switch(action.type) {
         
         case ADD_DEVICE:
-            console.log(action.payload)
             return { ...statePart, data: [ ...statePart.data, action.payload ] }
+        case UPDATE_DEVICE:
+            return { ...statePart, data: [ ...statePart.data.map((device)=>device.id===action.payload.id?action.payload:device)] }
+        case REMOVE_DEVICE:
+            return { ...statePart, data: [ ...statePart.data.filter((device)=>device.id!==action.payload.id)] }
                 default:
             return statePart
     }

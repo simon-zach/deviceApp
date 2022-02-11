@@ -2,7 +2,7 @@ import React ,{useState} from "react";
 import {Form,Button} from "react-bootstrap"
 import { nanoid } from "nanoid";
 
-function AddNewDevice({addDevice}){
+function AddNewDevice({addDevice,handleClose}){
     const [name,setName] = useState("");
     const [description,setDescription] = useState("");
     const [disabled,setDisabled] = useState(false);
@@ -20,7 +20,7 @@ function AddNewDevice({addDevice}){
             description: description,
             disabled: disabled
         })
-
+        handleClose()
     }
     const handleOnChangeName = (e) => {
         setName(e.target.value);
@@ -50,8 +50,10 @@ function AddNewDevice({addDevice}){
             </Form.Group>
             <Button type="submit" variant="primary">
                 Create
+            </Button>{' '}
+            <Button onClick={handleClose} variant="primary">
+                Cancel
             </Button>
- 
             
         </Form>
         </>

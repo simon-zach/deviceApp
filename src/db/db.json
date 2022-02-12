@@ -1,0 +1,64 @@
+{
+  "devices": [
+    {
+      "id": "nt56n5rtjn6m54r5",
+      "name": "defgr",
+      "description": "asdasd",
+      "disabled": false
+    },
+    {
+      "id": "erbht5445b454b5",
+      "name": "qwrfw",
+      "description": "bntgrfbntrg",
+      "disabled": true
+    },
+    {
+      "id": "9GkyWjKChTPEux07XYTCU",
+      "name": "szymon",
+      "description": "szymon",
+      "disabled": false
+    },
+    {
+      "id": "zqP_eanRMmKm5hoNcTkqZ",
+      "name": "mark",
+      "description": "fff",
+      "disabled": false
+    },
+    {
+      "id": "c1V5Hg17Ux5y1ObhziAii",
+      "name": "uuu",
+      "description": "uuu",
+      "disabled": false
+    },
+    {
+      "id": "aon-Qc1bsBP8BEgQOL6rB",
+      "name": "ooo",
+      "description": "ooo",
+      "disabled": false
+    },
+    {
+      "id": "Gt38TWyhr_ytTJjULXqqq",
+      "name": "wwww",
+      "description": "wwww",
+      "disabled": false
+    },
+    {
+      "id": "hqh0Ucz3fORtYt-JjaTLD",
+      "name": "iii",
+      "description": "iii",
+      "disabled": false
+    },
+    {
+      "id": "zXa29tlO0H9hyNILvVYud",
+      "name": "ddd",
+      "description": "ddd",
+      "disabled": false
+    },
+    {
+      "id": "sjFnJIET9Yzk_5Oi6GRih",
+      "name": "iiii",
+      "description": "iiii",
+      "disabled": false
+    }
+  ]
+}

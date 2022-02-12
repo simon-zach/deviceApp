@@ -1,13 +1,20 @@
 
 import {connect } from "react-redux";
-import {getAllDevices} from "./../../redux/devicesRedux"
+import {fetchDevicesRequest,getAllDevices} from "./../../redux/devicesRedux"
 import DeviceList from "./DeviceList";
+import {getAllDevicesSelector} from "./../../redux/selectors"
 
 const mapStateToProps = state => ({
-    getAllDevices: getAllDevices(state)
+    
+    getAllDevices: getAllDevicesSelector(state)//getAllDevices(state)
   })
 
- 
+  const mapDispatchToProps = dispatch => 
+    ({
+      fetchDevicesRequest: ()=>dispatch(fetchDevicesRequest()),
+    })
+  
 
-export default connect(mapStateToProps,null)(DeviceList)
+
+export default connect(mapStateToProps,mapDispatchToProps)(DeviceList)
   

@@ -9,11 +9,6 @@ function AddNewDevice({addDevice,handleClose}){
     
     const handleSubmit = (event) =>{
         event.preventDefault();
-        /*
-        console.log(nanoid(),
-        name,
-        description,
-        disabled)*/
          addDevice({
             id: nanoid(),
             name: name,

@@ -7,7 +7,7 @@ const initialState = {
               description: 'asdasd',
               disabled: false,
             },
-            {
+           /* {
               id: "erbht5445b454b5",
               name: 'qwrfw',
               description: 'bntgrfbntrg',
@@ -24,7 +24,7 @@ const initialState = {
             name: 'shtthstsh',
             description: 'kiuuolui',
             disabled: true,
-            },
+            },*/
           ],
         
     }

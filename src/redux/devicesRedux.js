@@ -23,7 +23,7 @@ const reducer = function(statePart = [], action = {}) {
     switch(action.type) {
         case SAVE_FETCHED_DEVICES:
             //console.log(action)
-            return { data:  action.payload  }
+            return { data:  action.payload }
         case ADD_DEVICE:
             return { ...statePart, data: [ ...statePart.data, action.payload ] }
         case UPDATE_DEVICE:

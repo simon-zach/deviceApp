@@ -9,10 +9,32 @@ import DeviceDetails from "../DeviceDetails/DeviceDetailsContainer";
 function DeviceList({getAllDevices,fetchDevicesRequest}){
 
     const [devicesArr, setDevicesArr] = useState([]);
-    //const devicesArr=[]
+    const [finish, setFinish] = useState(false);
+    const [flag, setFlag] = useState(false);
+
+    if(!finish){
+        setTimeout(()=>{
+            fetchDevicesRequest()
+            //setDevicesArr(getAllDevices)
+            setFinish(true)
+        },1000)
+    }
+   
+    let timer1 = setTimeout(()=>{
+       
+        fetchDevicesRequest()
+            //setDevicesArr(getAllDevices)
+            //setFlag(true)
+        
+       
+    },10000)
+
+    
+
     useEffect(()=>{
-      
+        
         setDevicesArr(getAllDevices)
+         
     },[getAllDevices])
     
     const [show, setShow] = useState(false);

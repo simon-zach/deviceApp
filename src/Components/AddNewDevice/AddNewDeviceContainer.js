@@ -6,6 +6,5 @@ import AddNewDevice from "./AddNewDevice";
     addDevice: device => dispatch(addDevice(device)),
   })
  
-
 export default connect(null,mapDispatchToProps)(AddNewDevice)
   

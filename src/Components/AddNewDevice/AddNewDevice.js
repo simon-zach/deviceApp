@@ -17,6 +17,7 @@ function AddNewDevice({addDevice,handleClose}){
         })
         handleClose()
     }
+
     const handleOnChangeName = (e) => {
         setName(e.target.value);
     }
@@ -24,16 +25,16 @@ function AddNewDevice({addDevice,handleClose}){
         setDescription(e.target.value);
     }
     const handleOnChangeDisabled = (e) => {
-       // console.log(e.target)
+
         setDisabled(e.target.checked);
     }
+
     return(
         <>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formName">
                 <Form.Label>Device Name</Form.Label>
                 <Form.Control required="required" type="text" name="name" value={name} onChange={e=>handleOnChangeName(e)} placeholder="Enter name" />
-            
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formDescription">

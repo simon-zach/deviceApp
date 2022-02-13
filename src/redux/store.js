@@ -3,7 +3,7 @@ import initialState from "./initialState"
 import devicesReducer from "./devicesRedux"
 import createSagaMiddleware  from "redux-saga"
 import { composeWithDevTools } from "redux-devtools-extension";
-import {rootSaga} from './index'
+import {rootSaga} from './saga/index'
 
 const reducers = {
     devices: devicesReducer,
@@ -11,13 +11,10 @@ const reducers = {
 const sagaMiddleware = createSagaMiddleware()
 const reducer = combineReducers(reducers);
 
-
 const store = createStore(
     reducer,
     initialState,
-    //applyMiddleware(sagaMiddleware),
     composeWithDevTools(
-        
       applyMiddleware(sagaMiddleware),
     )
 )

@@ -3,7 +3,6 @@ import {Form, Button} from "react-bootstrap";
 
 function DeviceDetails({device,updateDevice,removeDevice,handleClose}){
 
-
     const [name,setName] = useState(device.name)
     const [description,setDescription] = useState(device.description)
     const [disabled,setDisabled] = useState(device.disabled)
@@ -35,8 +34,6 @@ function DeviceDetails({device,updateDevice,removeDevice,handleClose}){
 
     return(
         <>
-       
-            
             <Form>
                 <div>Device Id: {device.id}</div><br/>
 

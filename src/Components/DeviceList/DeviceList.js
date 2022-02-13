@@ -5,24 +5,24 @@ import DeviceItem from "../DeviceItem";
 import { Button ,ListGroup, Stack, Badge, Row,Col,Container} from "react-bootstrap";
 import AddNewDevice from "../AddNewDevice/AddNewDeviceContainer";
 import DeviceDetails from "../DeviceDetails/DeviceDetailsContainer";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {getAllDevicesSelector} from "./../../redux/selectors"
-import {getAllDevices}from "./../../redux/devicesRedux"
+
 
 function DeviceList({fetchDevicesRequest}){
 
     const devicesForList = useSelector(state => getAllDevicesSelector(state))
     
-    const xx1 = async () => {
-        let timer1 = setTimeout(()=>{
+    const timer30s = async () => {
+         setTimeout(()=>{
             fetchDevicesRequest()
-              console.log('5sek1')
-                return(xx1()) 
-         },5000)
+              console.log('30 sec timer finished.')
+                return(timer30s()) 
+         },30000)
     }
 
     useEffect(()=>{
-        xx1()
+        timer30s()
         fetchDevicesRequest()    
     },[])
     
@@ -46,7 +46,6 @@ function DeviceList({fetchDevicesRequest}){
 
     const handleRefreshClick=()=>{
         fetchDevicesRequest()
-        //setDevicesArr(getAllDevices)
     }
     return(
         <>
@@ -56,9 +55,9 @@ function DeviceList({fetchDevicesRequest}){
         </Stack>
         <PopUpWindow popUpTitle={popUpTitle} popUpContent={popUpContent} show={show} handleClose={handleClose}></PopUpWindow>
 
-        <h2 gap={3}>Device List</h2>
+        <h2 gap={3}>Device List:</h2>
         <ListGroup>
-            {console.log(devicesForList)}
+            {devicesForList && devicesForList.length===0 && <h3>No devices</h3>}
             {devicesForList && devicesForList.length>0 && devicesForList.map((device,index)=>{
                 return (
                         <ListGroup.Item key={device.id} className="d-flex justify-content-between align-items-start" onClick={()=>handleShow(device)}>
@@ -80,15 +79,9 @@ function DeviceList({fetchDevicesRequest}){
                                 
                                 </Container>
                         </ListGroup.Item>
-                    
                 )
             })}
         </ListGroup>
-       
-        
-  
- 
-
         </>
     )
 }

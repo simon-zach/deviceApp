@@ -1,6 +1,5 @@
 import React from "react";
-import {Button, Modal} from "react-bootstrap";
-
+import { Modal} from "react-bootstrap";
 
 function PopUpWindow({show,handleClose,popUpContent,popUpTitle}){
    
@@ -11,7 +10,6 @@ function PopUpWindow({show,handleClose,popUpContent,popUpTitle}){
             <Modal.Title>{popUpTitle}</Modal.Title>
           </Modal.Header>
           <Modal.Body>{popUpContent}</Modal.Body>
-          
         </Modal>
       </>
     );

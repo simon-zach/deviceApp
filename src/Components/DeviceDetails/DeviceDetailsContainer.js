@@ -7,6 +7,5 @@ import DeviceDetails from "./DeviceDetails";
     removeDevice: device => dispatch(removeDevice(device)),
   })
  
-
 export default connect(null,mapDispatchToProps)(DeviceDetails)
   

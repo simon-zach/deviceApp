@@ -15,11 +15,11 @@ const reducer = combineReducers(reducers);
 const store = createStore(
     reducer,
     initialState,
-    applyMiddleware(sagaMiddleware),
-   // composeWithDevTools(
-      //  applyMiddleware(saga)
-    //  applyMiddleware(sagaMiddleware),
-    //)
+    //applyMiddleware(sagaMiddleware),
+    composeWithDevTools(
+        
+      applyMiddleware(sagaMiddleware),
+    )
 )
 sagaMiddleware.run(rootSaga)
 

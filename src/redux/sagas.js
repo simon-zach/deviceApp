@@ -1,12 +1,6 @@
 
 import { call, put, takeLatest,takeEvery ,delay} from 'redux-saga/effects'
-import { saveFetchedDevices,fetchDevicesRequest,addDevice } from './devicesRedux'
-import axios from "axios"
-import {getDevicesAPI, postDeviceAPI} from "./../apis/index"
-
-//const getDevices= () => {
-//  return axios.get("http://localhost:3131/devices")
-//}
+import {getDevicesAPI, postDeviceAPI,deleteDeviceAPI,updateDeviceAPI} from "./../apis/index"
 
 //get
 function* getDevicesHandler(action) {
@@ -14,14 +8,9 @@ function* getDevicesHandler(action) {
       const response = yield call(getDevicesAPI);
       console.log(response)
       if(response.status===200){
-       // yield delay(3000);
-        //saveFetchedDevices(response.data)
         const payload = response.data
-       console.log(payload)
-        //console.log('SAVE_FETCHED_DEVICES',response.data)
         yield put({type: 'SAVE_FETCHED_DEVICES',payload})
       }
-      
    } catch (e) {
        console.log(e)
    }
@@ -29,12 +18,8 @@ function* getDevicesHandler(action) {
 
 
 //post
-
-
 function* postDevicesHandler(action) {
   try {
-   // yield delay(4000);
-    //console.log(action.payload)
     const device = action.payload
     yield call(postDeviceAPI,device);
   } catch (e) {
@@ -42,10 +27,34 @@ function* postDevicesHandler(action) {
   }
 }
 
+//delete
+function* deleteDevicesHandler(action) {
+  try {
+    const device = action.payload
+    console.log("delete")
+    console.log(device)
+    yield call(deleteDeviceAPI,device);
+  } catch (e) {
+      console.log(e)
+  }
+}
+//delete
+function* updateDevicesHandler(action) {
+  try {
+    const device = action.payload
+    console.log("update")
+    console.log(device)
+    yield call(updateDeviceAPI,device);
+  } catch (e) {
+      console.log(e)
+  }
+}
+
 function* mySaga() {
   yield takeEvery("ADD_DEVICE",postDevicesHandler);
- //console.log(fetchDevicesRequest)
   yield takeEvery("FETCH_DEVICES_REQUEST",getDevicesHandler);
+  yield takeEvery("REMOVE_DEVICE",deleteDevicesHandler);
+  yield takeEvery("UPDATE_DEVICE",updateDevicesHandler);
 }
 
 export default mySaga;

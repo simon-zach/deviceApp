@@ -5,52 +5,40 @@ import DeviceItem from "../DeviceItem";
 import { Button ,ListGroup, Stack, Badge, Row,Col,Container} from "react-bootstrap";
 import AddNewDevice from "../AddNewDevice/AddNewDeviceContainer";
 import DeviceDetails from "../DeviceDetails/DeviceDetailsContainer";
+import { useSelector, useDispatch } from 'react-redux'
+import {getAllDevicesSelector} from "./../../redux/selectors"
+import {getAllDevices}from "./../../redux/devicesRedux"
 
-function DeviceList({getAllDevices,fetchDevicesRequest}){
+function DeviceList({fetchDevicesRequest}){
 
-    const [devicesArr, setDevicesArr] = useState([]);
-    const [finish, setFinish] = useState(false);
-    const [flag, setFlag] = useState(false);
-
-    if(!finish){
-        setTimeout(()=>{
-            fetchDevicesRequest()
-            //setDevicesArr(getAllDevices)
-            setFinish(true)
-        },1000)
-    }
-   
-    let timer1 = setTimeout(()=>{
-       
-        fetchDevicesRequest()
-            //setDevicesArr(getAllDevices)
-            //setFlag(true)
-        
-       
-    },10000)
-
+    const devicesForList = useSelector(state => getAllDevicesSelector(state))
     
+    const xx1 = async () => {
+        let timer1 = setTimeout(()=>{
+            fetchDevicesRequest()
+              console.log('5sek1')
+                return(xx1()) 
+         },5000)
+    }
 
     useEffect(()=>{
-        
-        setDevicesArr(getAllDevices)
-         
-    },[getAllDevices])
+        xx1()
+        fetchDevicesRequest()    
+    },[])
     
     const [show, setShow] = useState(false);
     const [popUpContent, setPopUpContent] = useState();
     const [popUpTitle, setPopUpTitle] = useState();
+
     const handleClose = () => setShow(false);
 
     const handleShow = (device) => {
-
         setShow(true);
         setPopUpContent(<DeviceDetails handleClose={handleClose} device={device}></DeviceDetails>);
         setPopUpTitle("Device Details")
     }
 
     const handleNewDevice= () => {
-
         setShow(true);
         setPopUpContent(<AddNewDevice handleClose={handleClose}></AddNewDevice>);
         setPopUpTitle("Add new Device")
@@ -70,8 +58,8 @@ function DeviceList({getAllDevices,fetchDevicesRequest}){
 
         <h2 gap={3}>Device List</h2>
         <ListGroup>
-            {console.log(devicesArr)}
-            {devicesArr&&devicesArr.length>0 && devicesArr.map((device,index)=>{
+            {console.log(devicesForList)}
+            {devicesForList && devicesForList.length>0 && devicesForList.map((device,index)=>{
                 return (
                         <ListGroup.Item key={device.id} className="d-flex justify-content-between align-items-start" onClick={()=>handleShow(device)}>
                             

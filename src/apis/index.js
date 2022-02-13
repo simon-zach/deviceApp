@@ -6,6 +6,9 @@ export const getDevicesAPI = async () => axios.get('/devices')
 
 export const postDeviceAPI = async (device) => axios.post(`/devices`, device)
 
+export const deleteDeviceAPI = async (device) => axios.delete(`/devices/${device.id}`)
+
+export const updateDeviceAPI = async (device) => axios.put(`/devices/${device.id}`,device)
 /*
 
 export const getUserByIdAPI = async (id) => axios.get(`/users/${id}`)

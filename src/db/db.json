@@ -1,21 +1,15 @@
 {
   "devices": [
     {
-      "id": "YL0fo-HAVrwvPs-jhnQeN",
-      "name": "ftghtrhhjkhjkhjk",
-      "description": "rthrth",
-      "disabled": false
+      "id": "bNDR6u7lfpsf-j2lsejv-",
+      "name": "gggg",
+      "description": "ffsdf",
+      "disabled": true
     },
     {
-      "id": "UD03jRcvzfXPDouh43Njp",
-      "name": "tyjhntyjghjghjghjghjhhh",
-      "description": "tyjtyjjyghjghjghjghj",
-      "disabled": false
-    },
-    {
-      "id": "FzGVe_Hcce-OPJOg0Ycq8",
-      "name": "lkj;kjl;",
-      "description": "kjl;jkl;",
+      "id": "TD40iSg3gbxPUkdVVLZEp",
+      "name": "sdfdsf",
+      "description": "dsfdsf",
       "disabled": true
     }
   ]
